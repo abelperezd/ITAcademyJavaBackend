@@ -9,7 +9,7 @@ public class Main {
         venda.AddProduct(new Producte("patates", 1.35f));
 
         venda.CalcularTotal();
-        System.out.println("price: " + venda.getTotalPrice());
+        System.out.println("price: " + venda.getTotalPrice() + "€");
 
         //To generate the exception
         new Venda().CalcularTotal();
