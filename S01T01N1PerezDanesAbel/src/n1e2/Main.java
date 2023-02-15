@@ -13,7 +13,7 @@ public class Main {
 
         Cotxe seatIbiza = new Cotxe("Ibiza");
         System.out.println("Model: " + seatIbiza.model);
-        System.out.println("Potencia: " + seatIbiza.potencia);
+        System.out.println("Potencia: " + seatIbiza.getPotencia());
         seatIbiza.Accelerar();
     }
 }
