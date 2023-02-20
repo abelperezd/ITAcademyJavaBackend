@@ -8,12 +8,12 @@ public class Main {
      * valor sempre que es vulgui, com per exemple al constructor.
      */
     public static void main(String[] args) {
-        System.out.println("Marca: " + Cotxe.marca);
-        Cotxe.Frenar();
+        System.out.println("Marca: " + Cotxe.getMarca());
+        Cotxe.frenar();
 
         Cotxe seatIbiza = new Cotxe("Ibiza");
-        System.out.println("Model: " + seatIbiza.model);
+        System.out.println("Model: " + Cotxe.getModel());
         System.out.println("Potencia: " + seatIbiza.getPotencia());
-        seatIbiza.Accelerar();
+        seatIbiza.accelerar();
     }
 }

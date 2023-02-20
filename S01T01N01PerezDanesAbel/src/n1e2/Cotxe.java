@@ -1,23 +1,40 @@
 package n1e2;
 
 public class Cotxe {
-    static final String marca = "Seat";
-    static String model;
+
+    ///region Attributes
+
+    private static final String marca = "Seat";
+    private static String model;
     private final int potencia = 100;
+
+    ///endregion
+
+    ///region Getters
+
+    public static String getMarca() {
+        return marca;
+    }
+
+    public static String getModel() {
+        return model;
+    }
 
     public int getPotencia() {
         return potencia;
     }
 
+    ///endregion
+
     public Cotxe(String model) {
         this.model = model;
     }
 
-    static void Frenar() {
+    static void frenar() {
         System.out.println("El vehicle està frenant");
     }
 
-    void Accelerar() {
+    void accelerar() {
         System.out.println("El vehicle està accelerant");
     }
 
