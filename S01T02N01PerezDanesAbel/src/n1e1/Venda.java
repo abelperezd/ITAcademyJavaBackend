@@ -18,17 +18,16 @@ public class Venda {
 
     private ArrayList<Producte> productes = new ArrayList<>();
 
-
     private float totalPrice;
     public float getTotalPrice() {
         return totalPrice;
     }
 
-    public void AddProduct(Producte prod){
+    public void addProduct(Producte prod){
         productes.add(prod);
     }
 
-    public void CalcularTotal() throws Exception {
+    public void calcularTotal() throws Exception {
         if (productes.size() > 0) {
             totalPrice = 0;
             for (Producte p : productes) {
