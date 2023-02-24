@@ -11,7 +11,7 @@ public class Main {
         System.out.println("Marca: " + Cotxe.getMarca());
         Cotxe.frenar();
 
-        Cotxe seatIbiza = new Cotxe("Ibiza");
+        Cotxe seatIbiza = new Cotxe("Ibiza", 100);
         System.out.println("Model: " + Cotxe.getModel());
         System.out.println("Potencia: " + seatIbiza.getPotencia());
         seatIbiza.accelerar();

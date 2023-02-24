@@ -6,7 +6,7 @@ public class Cotxe {
 
     private static final String marca = "Seat";
     private static String model;
-    private final int potencia = 100;
+    private final int potencia;
 
     ///endregion
 
@@ -26,8 +26,9 @@ public class Cotxe {
 
     ///endregion
 
-    public Cotxe(String model) {
+    public Cotxe(String model, int potencia) {
         this.model = model;
+        this.potencia = potencia;
     }
 
     static void frenar() {
