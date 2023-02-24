@@ -6,6 +6,7 @@ package n1e2;
 //About serialization:
 //https://www.baeldung.com/java-custom-annotation
 
+@SuppressWarnings("deprecation")
 public class Main {
     public static void main(String[] args) {
 
