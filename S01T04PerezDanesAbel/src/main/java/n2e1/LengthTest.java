@@ -10,7 +10,6 @@ public class LengthTest {
     @Test
     public void testEquals() {
         assertThat("Mordor", StringLengthMatcher.hasLength((IsEqual<Integer>) equalTo(8)));
-        // assertThat("Mordor".length(), new StringLenghtIsEqual(8));
     }
 
 }
