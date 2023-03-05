@@ -1,10 +1,15 @@
 package n2e2;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
 
-        GenericMethods gm = new GenericMethods<>(new Persona("aa", "bb", 1), "This is a String", 8);
+        ArrayList<Object> list = new ArrayList<Object>();
+        list.add(new Persona("aa", "bb", 1));
+        list.add("This is a String");
+        list.add(8);
+        GenericMethods gm = new GenericMethods<>(list);
         gm.printList();
-
     }
 }

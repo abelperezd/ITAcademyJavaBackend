@@ -4,10 +4,8 @@ import java.util.ArrayList;
 
 public class GenericMethods<T> {
 
-    public GenericMethods(Persona t1, String t2, Integer t3) {
-        list.add((T) t1);
-        list.add((T) t2);
-        list.add((T) t3);
+    public GenericMethods(ArrayList<T> list) {
+        this.list = list;
     }
 
     private ArrayList<T> list = new ArrayList<>();
