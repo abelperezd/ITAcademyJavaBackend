@@ -2,6 +2,9 @@ package n2e2;
 
 import java.util.ArrayList;
 
+//https://lineadecodigo.com/java/parametros-variables-en-java/
+//https://desarrolloavanzado.com/parametros-variables-en-java-vararg-parameters/
+
 public class GenericMethods<T> {
 
     private ArrayList<T> list = new ArrayList<>();
