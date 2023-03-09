@@ -6,10 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         ArrayList<Object> list = new ArrayList<Object>();
-        list.add(new Persona("aa", "bb", 1));
-        list.add("This is a String");
-        list.add(8);
-        GenericMethods gm = new GenericMethods<>(list);
+        GenericMethods gm = new GenericMethods<>(new Persona("aa", "bb", 1), "This is a String", 8, 7.4, 'a');
         gm.printList();
     }
 }

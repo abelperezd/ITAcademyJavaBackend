@@ -4,11 +4,13 @@ import java.util.ArrayList;
 
 public class GenericMethods<T> {
 
-    public GenericMethods(ArrayList<T> list) {
-        this.list = list;
-    }
-
     private ArrayList<T> list = new ArrayList<>();
+
+    public GenericMethods(T... list) {
+        for (T t : list) {
+            this.list.add(t);
+        }
+    }
 
     ///region Getters and Setters
     public T getList(int index) {
@@ -21,9 +23,7 @@ public class GenericMethods<T> {
     ///endregion
 
     public void printList() {
-        for (T t : list) {
-            System.out.println(t);
-        }
+        list.forEach(System.out::println);
     }
 
 
