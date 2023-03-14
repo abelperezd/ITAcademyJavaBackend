@@ -1,10 +1,10 @@
-### Descripció
+## Descripció
 - Utilitza per a tots els exercicis Eclipse o IntelliJ.
 - No oblidis posar sempre les classes Java dins de packages.
 - Es recomana crear per cada exercici un package de la següent manera: n1exercici1, n1exercici2, n2exercici1, etc.
 - Pots construir projectes Maven, Gradle o només Java.
 
-### Nivell 1
+## Nivell 1
 ##### Exercici 1
 En un grup de música hi ha diferents tipus d’instruments musicals. Hi ha instruments de vent, de corda i de percussió.
 
@@ -15,14 +15,14 @@ El procés de càrrega d'una classe només té lloc una vegada. Demostra que la càrr
 
 Cerca informació sobre els blocs d'inicialització i blocs estàtics en Java.
 
-##### Exercici 2
+#### Exercici 2
 Crea una classe "Cotxe" amb els atributs: marca, model i potència. La marca ha de ser estàtic final, el model estàtic i la potència final. Demostra la diferència entre els tres. N'hi ha algun que es pugui inicialitzar al constructor de la classe?
 
 Afegeix dos mètodes a la classe “Cotxe”. Un mètode estàtic anomenat frenar() i un altre no estàtic anomenat accelerar(). El mètode accelerar ha de mostrar per consola: “El vehicle està accelerant” i el mètode frenar() ha de mostrar: “El vehicle està frenant”. 
 
 Demostra com invocar el mètode estàtic i el no estàtic des del main() de la classe principal.
 
-##### Exercici 3
+#### Exercici 3
 Explica’ns com ho has fet!
 
 A més del codi que entregaràs per a resoldre aquest nivell, volem que ens l'expliquis i demostris com s'executa.
@@ -33,8 +33,8 @@ Aquest exercici et permetrà treballar a ordenar idees i ser capaç de resumir i c
 
 Per això, et demanem que gravis un vídeo, que pots incloure en el mateix Repositori de Git on has d'entregar el codi, o en un altre diferent (en aquest cas, no t’oblidis d’incloure l’enllaç).
 
-### Nivell 2
-##### Exercici 1
+## Nivell 2
+#### Exercici 1
 Crea una classe anomenada "Telèfon" amb els atributs marca i model, i el mètode trucar(). Aquest mètode ha de rebre un String amb un número de telèfon. El mètode ha de mostrar per consola un missatge dient que s’està trucant al número rebut per paràmetre. 
 
 Crea una interfície anomenada "Camera" amb el mètode fotografiar(), i una altra interfície anomenada Rellotge amb el mètode alarma().
@@ -45,8 +45,8 @@ El mètode fotografiar() ha de mostrar per consola: “S’està fent una foto” i el m
 
 Des del main() de l’aplicació, crea un objecte Smartphone i crida als mètodes anteriors.
 
-### Nivell 3
-##### Exercici 1
+## Nivell 3
+#### Exercici 1
 En una redacció de notícies esportives tenen les notícies classificades per esports: futbol, bàsquet, tenis, F1 i motociclisme.
 La redacció pot tenir més d’un redactor, i de cadascun d’ells volem saber el seu nom, el DNI i el sou. Un cop assignat un DNI, aquest no podrà canviar mai. Tots els redactors tenen el mateix sou, i si en un futur l’empresa pot incrementar-lo, ho farà a tothom per igual. De moment el sou actual és de 1500?€.
 Cada redactor pot treballar en més d’una notícia. Les notícies han de tenir un titular, un text, una puntuació i un preu. En el moment de crear-se, el text ha d’estar buit.
