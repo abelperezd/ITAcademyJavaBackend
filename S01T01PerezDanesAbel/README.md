@@ -1,3 +1,5 @@
+# Tasca S1.01: Herència i poliformisme
+
 ## Descripció
 - Utilitza per a tots els exercicis Eclipse o IntelliJ.
 - No oblidis posar sempre les classes Java dins de packages.

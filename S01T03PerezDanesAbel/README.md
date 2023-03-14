@@ -1,17 +1,19 @@
+# Tasca S1.03: Java Collections
+
 ## Descripció
 - Utilitza per a tots els exercicis Eclipse o IntelliJ.
 - No oblidis posar sempre les classes Java dins de packages.
 - Pots construir projectes Maven, Gradle o només Java.
 
 ## Nivell 1
-#### Exercici 1
+### Exercici 1
 Crea una classe anomenada Month amb un atribut "name" (que emmagatzemarà el nom del mes de l'any). Afegeix 11 objectes Month (cadascun amb el seu atribut diferent) en un ArrayList, a excepció de l'objecte amb atribut "Agost". Després, efectua la inserció en el lloc que correspon a aquest mes i demostra que l’ArrayList manté l'ordre correcte.
 
 Converteix l’ArrayList de l’exercici anterior en un HashSet i assegura’t que no permet duplicats.
 
 Recorre la llista amb un for i amb un iterador.
 
-#### Exercici 2
+### Exercici 2
 Crea i emplena un List< Integer >. 
 
 Crea un segon List< Integer > i insereix a la segona llista els elements de la primera en ordre invers. 
