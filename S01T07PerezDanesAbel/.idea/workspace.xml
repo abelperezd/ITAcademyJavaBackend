@@ -5,36 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9162870a-d29a-4c10-a49d-aec1dc7d8626" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../S01T05PerezDanesAbel/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/S01T05PerezDanesAbel.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/out/production/S01T05PerezDanesAbel/prop.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/out/production/S01T05PerezDanesAbel/resources/result__20_02_2023__23_42_35.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/out/production/S01T05PerezDanesAbel/resources/result__20_02_2023__23_47_37.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/out/production/S01T05PerezDanesAbel/resources/result__20_02_2023__23_48_10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/out/production/S01T05PerezDanesAbel/resources/result__20_02_2023__23_52_19.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/prop.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../S01T05PerezDanesAbel/prop.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/resources/result__21_02_2023__00_07_10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/src/n1e1/FilesLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/src/n1e1/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/src/n1e2/FileData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/src/n1e2/FilesLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/src/n1e2/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/src/n1e3/FileData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/src/n1e3/FilesLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/src/n1e3/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/src/n1e4/FileData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/src/n1e4/FilesLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/src/n1e4/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/src/n1e5/FileData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/src/n1e5/FilesLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/src/n1e5/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/src/n1e5/SerializableFileData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/src/n2e1/FileData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/src/n2e1/FilesLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S01T05PerezDanesAbel/src/n2e1/Main.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/n3e1/JsonDeserializableMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/n3e1/JsonElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/n3e1/JsonSerializableMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/n3e1/JsonSerializationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/n3e1/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/n3e1/SerializeUtilities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/n3e1/Treballador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,15 +43,21 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/apere/Desktop/Proyectos/ITAcademyJavaBackend/S01T05PerezDanesAbel"
+    "last_opened_file_path": "C:/Users/apere/Desktop/Proyectos/ITAcademyJavaBackend/S01T07PerezDanesAbel/src/main/java/n3e1"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\apere\Desktop\Proyectos\ITAcademyJavaBackend\S01T07PerezDanesAbel\src\main\java\n3e1" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\apere\Desktop\Proyectos\ITAcademyJavaBackend\S01T07PerezDanesAbel\src\main\java" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="n3e1" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.n1e2.Main">
+  <component name="RunManager" selected="Application.n3e1.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="n2e1.Main" />
       <module name="S01T07PerezDanesAbel" />
@@ -100,8 +84,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="n3e1.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="n3e1.Main" />
+      <module name="S01T07PerezDanesAbel" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="n3e1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.n3e1.Main" />
         <item itemvalue="Application.n1e2.Main" />
         <item itemvalue="Application.Main" />
       </list>
