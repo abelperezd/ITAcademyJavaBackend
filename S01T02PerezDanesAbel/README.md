@@ -39,12 +39,12 @@ Una famosa empresa de cinemes ens ha demanat que desenvolupem una aplicació per 
 #### Funcionament
 L’aplicació un cop s’hagi iniciat, preguntarà a l’usuari/ària quantes files i quants seients per fila té la sala de cinema. Un cop introduïdes aquestes dades, es mostrarà el següent menú:
 
-1.- Mostrar totes les butaques reservades.
-2.- Mostrar les butaques reservades per una persona.
-3.- Reservar una butaca.
-4.- Anul·lar la reserva d’una butaca.
-5.- Anul·lar totes les reserves d’una persona.
-0.- Sortir.
+1. Mostrar totes les butaques reservades.
+2. Mostrar les butaques reservades per una persona.
+3. Reservar una butaca.
+4. Anul·lar la reserva d’una butaca.
+5. Anul·lar totes les reserves d’una persona.
+0. Sortir.
 
 
 L’aplicació tindrà les següents classes:

@@ -124,10 +124,10 @@ Notícies de Motociclisme:
 
 A la classe principal s’ha de fer un menú amb les següents opcions:
 
-1.- Introduir redactor.
-2.- Eliminar redactor.
-3.- Introduir notícia a un redactor.
-4.- Eliminar notícia (ha de demanar redactor i titular de la notícia).
-5.- Mostrar totes les notícies per redactor.
-6.- Calcular puntuació de la notícia.
-7.- Calcular preu-notícia.
+1. Introduir redactor.
+2. Eliminar redactor.
+3. Introduir notícia a un redactor.
+4. Eliminar notícia (ha de demanar redactor i titular de la notícia).
+5. Mostrar totes les notícies per redactor.
+6. Calcular puntuació de la notícia.
+7. Calcular preu-notícia.
