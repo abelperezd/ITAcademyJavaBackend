@@ -12,9 +12,9 @@ Converteix l’ArrayList de l’exercici anterior en un HashSet i assegura’t que no 
 Recorre la llista amb un for i amb un iterador.
 
 #### Exercici 2
-Crea i emplena un List<Integer>. 
+Crea i emplena un List< Integer >. 
 
-Crea un segon List<Integer> i insereix a la segona llista els elements de la primera en ordre invers. 
+Crea un segon List< Integer > i insereix a la segona llista els elements de la primera en ordre invers. 
 
 Empra els objectes ListIterator per a llegir els elements de la primera llista i inserir-los en la segona.
 
@@ -51,10 +51,10 @@ La classe principal té el següent menú:
 El programa haurà de llistar les persones com el següent exemple:
 
 ___Nom___ ____Cognoms___ __NIF__ 
-Andreu          Ballestero Llenas  34835767J 
-Miquel          Bayona Font           48743957B 
-Guillem         Capdevila Riu        33957834J 
-Albert          Carbonell Ferrer      77364986R
-Ferran          Casas Coderch        23047848P
-Maria           Casellas Fuste          47102244S
-Genis           Ciutat Vendrell         39718459N
+1. Andreu          Ballestero Llenas  34835767J 
+2. Miquel          Bayona Font           48743957B 
+3. Guillem         Capdevila Riu        33957834J 
+4. Albert          Carbonell Ferrer      77364986R
+5. Ferran          Casas Coderch        23047848P
+6. Maria           Casellas Fuste          47102244S
+7. Genis           Ciutat Vendrell         39718459N
