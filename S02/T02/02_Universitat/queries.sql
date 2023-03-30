@@ -88,12 +88,11 @@ LEFT JOIN profesor p ON a.id_profesor = p.id_profesor
 WHERE p.id_profesor IS NULL;
 
 -- 6. Retorna un llistat amb tots els departaments que no han impartit assignatures en cap curs escolar.
-SELECT d.* FROM departamento d
-	LEFT JOIN profesor pr ON pr.id_departamento = d.id
-		LEFT JOIN asignatura a ON a.id_profesor = pr.id_profesor
-			LEFT JOIN alumno_se_matricula_asignatura asm ON asm.id_asignatura = a.id
-WHERE asm.id_curso_escolar NOT IN (SELECT id FROM curso_escolar)
-GROUP BY d.id;
+SELECT d.*, a.id_profesor FROM departamento d
+	LEFT JOIN profesor p ON d.id=p.id_departamento
+		LEFT JOIN asignatura a ON a.id_profesor=p.id_profesor
+ WHERE a.id_profesor IS NULL
+ GROUP BY d.nombre;
 
 -- --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
