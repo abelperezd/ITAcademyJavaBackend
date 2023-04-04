@@ -2,6 +2,7 @@
 //https://www.edureka.co/blog/mongodb-commands/
 //more complex: https://www.ionos.com/digitalguide/websites/web-development/mongodb-commands/
 //regEx: https://www.mongodb.com/docs/manual/reference/operator/query/regex/
+//crash course: https://www.youtube.com/watch?v=f4iLZENMEeE&list=PLuGe-XRWqbNQHhIJXq5UfkzCB98vvw1m7&index=1
 
 // 1. Escriu una consulta per mostrar tots els documents en la col·lecció Restaurants.
 db.restaurants.find();
