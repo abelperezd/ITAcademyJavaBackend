@@ -25,7 +25,6 @@ public class FruitaController {
         this.fruitaService = fruitaService;
     }
 
-
     // http://localhost:8080/fruita/add => post
     @PostMapping("/add")
     public ResponseEntity<Fruita> createFruita(@RequestBody Fruita fruita) {
@@ -44,19 +43,19 @@ public class FruitaController {
         return fruitaService.deleteFruita(id);
     }
 
+    //http://localhost:8080/fruita/deleteAll => delete
     @DeleteMapping("/deleteAll")
     public ResponseEntity<HttpStatus> deleteAllFruitas() {
         return fruitaService.deleteAllFruitas();
     }
 
-    //http://localhost:8080/fruita/getOne/{id}
+    //http://localhost:8080/fruita/getOne/{id} => get
     @GetMapping("/getOne/{id}")
     public ResponseEntity<Fruita> getOne(@PathVariable("id") long id) {
         return fruitaService.getOne(id);
     }
 
-
-    //http://localhost:8080/fruita/getAll
+    //http://localhost:8080/fruita/getAll => get
     @GetMapping("/getAll")
     public ResponseEntity<List<Fruita>> getAllFruitas() {
         return fruitaService.getAllFruitas();
