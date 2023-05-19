@@ -3,6 +3,7 @@ package cat.itacademy.barcelonactiva.PerezDanes.Abel.s04.t02.n02.controller;
 
 import cat.itacademy.barcelonactiva.PerezDanes.Abel.s04.t02.n02.model.Fruita;
 import cat.itacademy.barcelonactiva.PerezDanes.Abel.s04.t02.n02.services.FruitaService;
+import cat.itacademy.barcelonactiva.PerezDanes.Abel.s04.t02.n02.services.IFruitaService;
 import org.springframework.http.HttpStatus;
 import cat.itacademy.barcelonactiva.PerezDanes.Abel.s04.t02.n02.repository.FruitaRepository;
 
@@ -20,7 +21,7 @@ import java.util.Optional;
 public class FruitaController {
 
     @Autowired
-    private final FruitaService fruitaService;
+    private final IFruitaService fruitaService;
 
     public FruitaController(FruitaService fruitaService) {
         this.fruitaService = fruitaService;

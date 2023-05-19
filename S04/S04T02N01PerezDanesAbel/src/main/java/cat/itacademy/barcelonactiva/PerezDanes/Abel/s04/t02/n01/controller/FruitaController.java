@@ -3,15 +3,13 @@ package cat.itacademy.barcelonactiva.PerezDanes.Abel.s04.t02.n01.controller;
 
 import cat.itacademy.barcelonactiva.PerezDanes.Abel.s04.t02.n01.model.Fruita;
 import cat.itacademy.barcelonactiva.PerezDanes.Abel.s04.t02.n01.services.FruitaService;
+import cat.itacademy.barcelonactiva.PerezDanes.Abel.s04.t02.n01.services.IFruitaService;
 import org.springframework.http.HttpStatus;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:8080")
 @RestController
@@ -19,7 +17,7 @@ import java.util.Optional;
 public class FruitaController {
 
     @Autowired
-    private final FruitaService fruitaService;
+    private final IFruitaService fruitaService;
 
     public FruitaController(FruitaService fruitaService) {
         this.fruitaService = fruitaService;

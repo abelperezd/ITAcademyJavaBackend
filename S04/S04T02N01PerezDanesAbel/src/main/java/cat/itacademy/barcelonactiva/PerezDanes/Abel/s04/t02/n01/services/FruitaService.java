@@ -6,14 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class FruitaService {
+public class FruitaService implements IFruitaService{
 
     @Autowired
     private final FruitaRepository fruitaRepository;
@@ -22,6 +21,7 @@ public class FruitaService {
         this.fruitaRepository = fruitaRepository;
     }
 
+    @Override
     public ResponseEntity<Fruita> createFruita(Fruita fruita) {
         try {
             Fruita _fruita = fruitaRepository
@@ -32,6 +32,7 @@ public class FruitaService {
         }
     }
 
+    @Override
     public ResponseEntity<Fruita> updateFruita( long id, Fruita fruita) {
         Optional<Fruita> fruitaData = fruitaRepository.findById(id);
 
@@ -47,6 +48,7 @@ public class FruitaService {
         }
     }
 
+    @Override
     public ResponseEntity<HttpStatus> deleteFruita(long id) {
         try {
             fruitaRepository.deleteById(id);
@@ -56,6 +58,7 @@ public class FruitaService {
         }
     }
 
+    @Override
     public ResponseEntity<HttpStatus> deleteAllFruitas() {
         try {
             fruitaRepository.deleteAll();
@@ -66,6 +69,7 @@ public class FruitaService {
 
     }
 
+    @Override
     public ResponseEntity<Fruita> getOne(long id) {
         Optional<Fruita> fruitaData = fruitaRepository.findById(id);
 
@@ -76,7 +80,7 @@ public class FruitaService {
         }
     }
 
-
+    @Override
     public ResponseEntity<List<Fruita>> getAllFruitas() {
         try {
             List<Fruita> fruites = new ArrayList<>();
@@ -91,5 +95,4 @@ public class FruitaService {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
 }
