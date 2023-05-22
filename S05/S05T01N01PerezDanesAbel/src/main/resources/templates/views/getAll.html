@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org" lang="en">
+<head th:replace="templates/template :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header th:replace="templates/template :: header"></header>
+<div class="container">
+    <h1 th:text="${title}"></h1>
+</div>
+<div class="container">
+    <a class="btn btn-primary btn-small" th:href="@{/sucursal/add}" title="Crear nova sucursal">Nova sucursal</a>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Pais</th>
+            <th scope="col">Tipus</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="suc : ${sucursals}">
+            <th scope="row" th:text="${suc.id}"> </th>
+            <td th:text="${suc.nomSucursal}"></td>
+            <td th:text="${suc.paisSucursal}"></td>
+            <td th:text="${suc.tipusSucursal}"></td>
+            <td>
+                <a class="btn btn-success btn-small" th:href="@{/sucursal/update/} + ${suc.id}" title="Editar sucursal">Editar</a>
+                <a class="btn btn-danger btn-small" th:href="@{/sucursal/delete/} + ${suc.id}" title="Eliminar sucursal"
+                onclick="return confirm('Confirmar eliminació?')">Eliminar</a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+<footer th:replace="templates/template :: footer"></footer>
+</body>
+</html>

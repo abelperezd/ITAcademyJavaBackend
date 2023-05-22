@@ -1,5 +1,6 @@
 package cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t01.n01.services;
 
+import cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t01.n01.dto.SucursalDTO;
 import cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t01.n01.model.Sucursal;
 import cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t01.n01.repository.SucursalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class SucursalService {
+public class SucursalService implements ISucursalService {
 
     @Autowired
     private final SucursalRepository sucursalRepository;
@@ -22,17 +23,16 @@ public class SucursalService {
     }
 
 
-    public ResponseEntity<Sucursal> createSucursal(Sucursal sucursal) {
+    @Override
+    public void createSucursal(SucursalDTO sucursal) {
         try {
-            Sucursal _sucursal = sucursalRepository
-                    .save(new Sucursal(sucursal.getNomSucursal(), sucursal.getPaisSucursal()));
-            return new ResponseEntity<>(_sucursal, HttpStatus.CREATED);
+            sucursalRepository.save(new Sucursal(sucursal.getId(), sucursal.getNomSucursal(), sucursal.getPaisSucursal()));
         } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    public ResponseEntity<Sucursal> updateSucursal(int id, Sucursal sucursal) {
+    @Override
+    public ResponseEntity<SucursalDTO> updateSucursal(int id, SucursalDTO sucursal) {
         Optional<Sucursal> sucursalData = sucursalRepository.findById(id);
 
         if (sucursalData.isPresent()) {
@@ -41,12 +41,13 @@ public class SucursalService {
                 _sucursal.setNomSucursal(sucursal.getNomSucursal());
             if (sucursal.getPaisSucursal().isEmpty())
                 _sucursal.setPaisSucursal(sucursal.getPaisSucursal());
-            return new ResponseEntity<>(sucursalRepository.save(_sucursal), HttpStatus.OK);
+            return new ResponseEntity<>(SucursalToDTOSucursal(sucursalRepository.save(_sucursal)), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
+    @Override
     public ResponseEntity<HttpStatus> deleteSucursal(int id) {
         try {
             sucursalRepository.deleteById(id);
@@ -56,6 +57,7 @@ public class SucursalService {
         }
     }
 
+    @Override
     public ResponseEntity<HttpStatus> deleteAllSucursal() {
         try {
             sucursalRepository.deleteAll();
@@ -63,33 +65,46 @@ public class SucursalService {
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-
     }
 
-    public ResponseEntity<Sucursal> getOne(int id) {
+    @Override
+    public SucursalDTO getOneSucursal(int id) {
         Optional<Sucursal> sucursalData = sucursalRepository.findById(id);
 
         if (sucursalData.isPresent()) {
-            return new ResponseEntity<>(sucursalData.get(), HttpStatus.OK);
+            return SucursalToDTOSucursal(sucursalData.get());
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return null;
         }
     }
 
-
-    public ResponseEntity<List<Sucursal>> getAllSucursal() {
+    @Override
+    //public ResponseEntity<List<SucursalDTO>> getAllSucursal() {
+    public List<SucursalDTO> getAllSucursal() {
         try {
-            List<Sucursal> fruites = new ArrayList<>();
+            List<SucursalDTO> sucursals = new ArrayList<>();
+            sucursalRepository.findAll().forEach(s -> {
+                sucursals.add(SucursalToDTOSucursal(s));
+            });
 
-            sucursalRepository.findAll().forEach(fruites::add);
-
-            if (fruites.isEmpty()) {
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            if (sucursals.isEmpty()) {
+                return null;
             }
-            return new ResponseEntity<>(fruites, HttpStatus.OK);
+            return sucursals;
         } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+            return null;
         }
     }
 
+    //region Mappers
+
+    private SucursalDTO SucursalToDTOSucursal(Sucursal sucursal) {
+        return new SucursalDTO(sucursal.getId(), sucursal.getNomSucursal(), sucursal.getPaisSucursal());
+    }
+
+    private Sucursal DTOSucursalToSucursal(SucursalDTO dto) {
+        return new Sucursal(dto.getId(), dto.getNomSucursal(), dto.getPaisSucursal());
+    }
+
+    //endregion
 }

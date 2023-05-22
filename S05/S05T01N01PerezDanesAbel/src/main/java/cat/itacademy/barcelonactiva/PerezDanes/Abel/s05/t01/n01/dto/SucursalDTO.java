@@ -1,5 +1,9 @@
 package cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t01.n01.dto;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import org.springframework.lang.NonNull;
+
 import java.util.Arrays;
 import java.util.LinkedList;
 
@@ -11,9 +15,12 @@ public class SucursalDTO {
             "Letonia", "Lituania", "Luxemburg", "Malta", "Paisos Baixos", "Polonia", "Portugal",
             "Romania", "Eslovaquia", "Eslovenia", "Espanya", "Suecia"));
 
+
     //reguion Attributes
     private int id;
+    @NotEmpty(message = "No pot estar buit.")
     private String nomSucursal;
+    @NotEmpty(message = "No pot estar buit.")
     private String paisSucursal;
     private String tipusSucursal;
 
@@ -27,12 +34,14 @@ public class SucursalDTO {
     public SucursalDTO(String nomSucursal, String paisSucursal) {
         this.nomSucursal = nomSucursal;
         this.paisSucursal = paisSucursal;
+        setTipusSucursal();
     }
 
     public SucursalDTO(int id, String nomSucursal, String paisSucursal) {
         this.id = id;
         this.nomSucursal = nomSucursal;
         this.paisSucursal = paisSucursal;
+        setTipusSucursal();
     }
 
     //endregion
@@ -43,6 +52,7 @@ public class SucursalDTO {
         return id;
     }
 
+
     public String getNomSucursal() {
         return nomSucursal;
     }
@@ -50,16 +60,23 @@ public class SucursalDTO {
     public String getPaisSucursal() {
         return paisSucursal;
     }
+    public String getTipusSucursal() {
+        return tipusSucursal;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
     public void setNomSucursal(String nomSucursal) {
         this.nomSucursal = nomSucursal;
     }
 
     public void setPaisSucursal(String paisSucursal) {
         this.paisSucursal = paisSucursal;
+        setTipusSucursal();
     }
 
-    public String getTipusSucursal() {
+    private void setTipusSucursal() {
         boolean isUeCountry = false;
         for (String ueCountry : UECountries) {
             if (ueCountry.equalsIgnoreCase(paisSucursal)) {
@@ -67,9 +84,7 @@ public class SucursalDTO {
                 break;
             }
         }
-
         tipusSucursal = isUeCountry ? "UE" : "Fora UE";
-        return tipusSucursal;
     }
 
 

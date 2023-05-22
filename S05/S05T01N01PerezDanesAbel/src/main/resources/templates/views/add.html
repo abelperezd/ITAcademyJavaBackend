@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org" lang="en">
+<head th:replace="templates/template :: head">
+    <meta charset="UTF-8">
+    <title>Afegeix sucursal</title>
+</head>
+<body>
+<header th:replace="templates/template :: header"></header>
+<div class="container">
+    <div class="card bg-light">
+        <div class="card-header bg-dark text-white" th:text="${title}"></div>
+        <div class="card-body">
+            <form th:action="@{/sucursal/save}" method="post" th:object="${sucursal}">
+                <div class="mb-3 row">
+                    <input type="hidden" th:field="*{id}">
+                    <label class="form-label col-md-2" for="name">Nom:</label>
+                    <input type="text" th:field="*{nomSucursal}" class="form-control form-control-sm" id="name"
+                           placeholder="Insereix el nom de la sucursal.">
+                    <small class="form-text text-danger" th:if="${#fields.hasErrors('nomSucursal')}"
+                           th:errors="*{nomSucursal}">No pot estar buit.</small>
+                </div>
+                <div class="mb-3 row">
+                    <label class="form-label col-md-2" for="country">Pais:</label>
+                    <input type="text" th:field="*{paisSucursal}" class="form-control form-control-sm" id="country"
+                           placeholder="Insereix el nom del pais.">
+                    <small></small>
+                    <small></small>
+                </div>
+                <input type="submit" class="btn btn-primary btn-sm" value="Guarda"/>
+            </form>
+        </div>
+    </div>
+</div>
+<footer th:replace="templates/template :: footer"></footer>
+</body>
+</html>

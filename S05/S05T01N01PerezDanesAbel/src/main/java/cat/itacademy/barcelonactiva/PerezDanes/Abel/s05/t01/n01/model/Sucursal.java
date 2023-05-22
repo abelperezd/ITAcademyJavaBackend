@@ -1,6 +1,7 @@
 package cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t01.n01.model;
 
 import jakarta.persistence.*;
+import org.springframework.lang.NonNull;
 
 
     /*
@@ -58,6 +59,10 @@ public class Sucursal {
 
     public String getPaisSucursal() {
         return paisSucursal;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setNomSucursal(String nomSucursal) {
