@@ -1,8 +1,6 @@
 package cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t01.n01.dto;
 
 import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import org.springframework.lang.NonNull;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -16,7 +14,7 @@ public class SucursalDTO {
             "Romania", "Eslovaquia", "Eslovenia", "Espanya", "Suecia"));
 
 
-    //reguion Attributes
+    //region Attributes
     private int id;
     @NotEmpty(message = "No pot estar buit.")
     private String nomSucursal;
@@ -52,7 +50,6 @@ public class SucursalDTO {
         return id;
     }
 
-
     public String getNomSucursal() {
         return nomSucursal;
     }
@@ -60,6 +57,7 @@ public class SucursalDTO {
     public String getPaisSucursal() {
         return paisSucursal;
     }
+
     public String getTipusSucursal() {
         return tipusSucursal;
     }
@@ -67,6 +65,7 @@ public class SucursalDTO {
     public void setId(int id) {
         this.id = id;
     }
+
     public void setNomSucursal(String nomSucursal) {
         this.nomSucursal = nomSucursal;
     }
@@ -86,7 +85,6 @@ public class SucursalDTO {
         }
         tipusSucursal = isUeCountry ? "UE" : "Fora UE";
     }
-
 
     //endregion
 

@@ -4,8 +4,6 @@ import cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t01.n01.dto.SucursalDTO;
 import cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t01.n01.model.Sucursal;
 import cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t01.n01.repository.SucursalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -28,42 +26,16 @@ public class SucursalService implements ISucursalService {
         try {
             sucursalRepository.save(new Sucursal(sucursal.getId(), sucursal.getNomSucursal(), sucursal.getPaisSucursal()));
         } catch (Exception e) {
+            System.out.println(e);
         }
     }
 
     @Override
-    public ResponseEntity<SucursalDTO> updateSucursal(int id, SucursalDTO sucursal) {
-        Optional<Sucursal> sucursalData = sucursalRepository.findById(id);
-
-        if (sucursalData.isPresent()) {
-            Sucursal _sucursal = sucursalData.get();
-            if (!sucursal.getNomSucursal().isEmpty())
-                _sucursal.setNomSucursal(sucursal.getNomSucursal());
-            if (sucursal.getPaisSucursal().isEmpty())
-                _sucursal.setPaisSucursal(sucursal.getPaisSucursal());
-            return new ResponseEntity<>(SucursalToDTOSucursal(sucursalRepository.save(_sucursal)), HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @Override
-    public ResponseEntity<HttpStatus> deleteSucursal(int id) {
+    public void deleteSucursal(int id) {
         try {
             sucursalRepository.deleteById(id);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
-    @Override
-    public ResponseEntity<HttpStatus> deleteAllSucursal() {
-        try {
-            sucursalRepository.deleteAll();
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            System.out.println(e);
         }
     }
 
@@ -79,7 +51,6 @@ public class SucursalService implements ISucursalService {
     }
 
     @Override
-    //public ResponseEntity<List<SucursalDTO>> getAllSucursal() {
     public List<SucursalDTO> getAllSucursal() {
         try {
             List<SucursalDTO> sucursals = new ArrayList<>();
@@ -92,6 +63,7 @@ public class SucursalService implements ISucursalService {
             }
             return sucursals;
         } catch (Exception e) {
+            System.out.println(e);
             return null;
         }
     }

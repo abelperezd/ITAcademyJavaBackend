@@ -2,7 +2,6 @@ package cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t01.n01.controller;
 
 
 import cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t01.n01.dto.SucursalDTO;
-import cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t01.n01.model.Sucursal;
 import cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t01.n01.services.ISucursalService;
 import cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t01.n01.services.SucursalService;
 import jakarta.validation.Valid;
@@ -13,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -37,10 +35,9 @@ public class SucursalController {
         return "home";
     }
 
-
     // http://localhost:8080/sucursal/add => post
     @GetMapping("/add")
-    public String createSucursal(Model model/*@RequestBody SucursalDTO sucursal*/) {
+    public String createSucursal(Model model) {
 
         SucursalDTO sucursal = new SucursalDTO();
 
@@ -48,7 +45,6 @@ public class SucursalController {
         model.addAttribute("sucursal", sucursal);
 
         return "views/add";
-        //return sucursalService.createSucursal(sucursal);
     }
 
     @PostMapping("/save")
@@ -86,7 +82,6 @@ public class SucursalController {
         //model.addAttribute("sucursals", sucursals);
 
         return "views/add";
-        //return sucursalService.createSucursal(sucursal);
     }
 
     //http://localhost:8080/sucursal/delete/{id} => delete
@@ -99,16 +94,9 @@ public class SucursalController {
         else
             attributes.addFlashAttribute("success", "Sucursal eliminada correctament.");
 
-
         sucursalService.deleteSucursal(id);
         System.out.println("User removed. ID: " + id);
         return "redirect:/sucursal/getAll";
-    }
-
-    //http://localhost:8080/sucursal/deleteAll => delete
-    @DeleteMapping("/deleteAll")
-    public ResponseEntity<HttpStatus> deleteAllSucursal() {
-        return sucursalService.deleteAllSucursal();
     }
 
     //http://localhost:8080/sucursal/getOne/{id} => get
@@ -124,7 +112,6 @@ public class SucursalController {
         model.addAttribute("sucursals",sucursalService.getAllSucursal());
         return "views/getAll";
     }
-
 }
 
 

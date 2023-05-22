@@ -16,7 +16,7 @@ import org.springframework.lang.NonNull;
 @Table(name = "sucursal")
 public class Sucursal {
 
-    //reguion Attributes
+    //region Attributes
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -30,6 +30,7 @@ public class Sucursal {
     //endregion
 
     //region Constructors
+
     public Sucursal() {
 
     }

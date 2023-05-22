@@ -9,6 +9,5 @@ import java.util.List;
 @Repository
 public interface SucursalRepository extends JpaRepository<Sucursal, Integer> {
 
-   // List<Sucursal> findByNom(String nom);
     List<Sucursal> findById(String id);
 }

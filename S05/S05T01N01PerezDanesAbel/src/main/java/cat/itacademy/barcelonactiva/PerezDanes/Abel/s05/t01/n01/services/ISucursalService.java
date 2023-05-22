@@ -9,14 +9,9 @@ import java.util.List;
 
 public interface ISucursalService {
 
-
     void createSucursal(SucursalDTO sucursal);
 
-    ResponseEntity<SucursalDTO> updateSucursal(int id, SucursalDTO sucursal);
-
-    ResponseEntity<HttpStatus> deleteSucursal(int id);
-
-    ResponseEntity<HttpStatus> deleteAllSucursal();
+    void deleteSucursal(int id);
 
     SucursalDTO getOneSucursal(int id);
 
