@@ -1,7 +1,6 @@
 package cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t02.n01.model;
 
 import jakarta.persistence.*;
-import org.springframework.lang.NonNull;
 
 
     /*
@@ -13,37 +12,38 @@ import org.springframework.lang.NonNull;
     */
 
 @Entity
-@Table(name = "sucursal")
-public class Sucursal {
+@Table(name = "rolling")
+public class Rolling {
 
     //region Attributes
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "nomSucursal")
-    private String nomSucursal;
+    @ManyToOne @JoinColumn(name = "player_id" )
+    @Column(name = "player_id")
+    private int player_id;
 
-    @Column(name = "paisSucursal")
-    private String paisSucursal;
+    @Column(name = "number")
+    private int number;
 
     //endregion
 
     //region Constructors
 
-    public Sucursal() {
+    public Rolling() {
 
     }
 
-    public Sucursal(String nomSucursal, String paisSucursal) {
-        this.nomSucursal = nomSucursal;
-        this.paisSucursal = paisSucursal;
+    public Rolling(int player_id, int number) {
+        this.player_id = player_id;
+        this.number = number;
     }
 
-    public Sucursal(int id, String nomSucursal, String paisSucursal) {
+    public Rolling(int id, int player_id, int number) {
         this.id = id;
-        this.nomSucursal = nomSucursal;
-        this.paisSucursal = paisSucursal;
+        this.player_id = player_id;
+        this.number = number;
     }
 
     //endregion
@@ -54,31 +54,31 @@ public class Sucursal {
         return id;
     }
 
-    public String getNomSucursal() {
-        return nomSucursal;
+    public int getPlayer_id() {
+        return player_id;
     }
 
-    public String getPaisSucursal() {
-        return paisSucursal;
+    public int getNumber() {
+        return number;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public void setNomSucursal(String nomSucursal) {
-        this.nomSucursal = nomSucursal;
+    public void setPlayer_id(int player_id) {
+        this.player_id = player_id;
     }
 
-    public void setPaisSucursal(String paisSucursal) {
-        this.paisSucursal = paisSucursal;
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     //endregion
 
     @Override
     public String toString() {
-        return "Sucursal [id=" + id + ", nom=" + nomSucursal + ", pais=" + paisSucursal + "]";
+        return "Rolling [id=" + id + ", user_id=" + player_id + ", number=" + number + "]";
     }
 
 }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header th:replace="templates/template :: header"></header>
+<div class="container">
+    <h1 th:text="${title}"></h1>
+</div>
+<div class="container">
+    <a class="btn btn-primary btn-small" th:href="@{/diceGame/add}" title="New user">New user</a>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Cr. Date</th>
+            <th scope="col">Editar/Eliminar</th>
+            <th scope="col">Play/Statistics</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="play : ${players}">
+            <th scope="row" th:text="${play.id}"></th>
+            <td th:text="${play.name}"></td>
+            <td th:text="${play.date}"></td>
+            <td>
+                <a class="btn btn-success btn-small" th:href="@{/diceGame/update/} + ${play.id}" title="Edit">Editar</a>
+                <a class="btn btn-danger btn-small" th:href="@{/diceGame/delete/} + ${play.id}" title="Delete"
+                   onclick="return confirm('Confirmar eliminació?')">Delete</a>
+            </td>
+            <td>
+                <a class="btn btn-success btn-small" th:href="@{/diceGame/update/} + ${play.id}" title="Edit">Play</a>
+                <a class="btn btn-success btn-small" th:href="@{/diceGame/update/} + ${play.id}" title="Edit">Statistics</a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+<footer th:replace="templates/template :: footer"></footer>
+</body>
+</html>
