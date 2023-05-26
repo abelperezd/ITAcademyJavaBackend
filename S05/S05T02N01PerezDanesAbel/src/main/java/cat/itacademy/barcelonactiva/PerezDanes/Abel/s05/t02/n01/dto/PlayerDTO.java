@@ -1,5 +1,6 @@
 package cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t02.n01.dto;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -59,8 +60,10 @@ public class PlayerDTO {
         this.name = name;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDate() {
+        //to avoid overriding the creation date
+        if (date == null)
+            this.date = new Date(System.currentTimeMillis());
     }
 
     public void setAverageScore(float score) {

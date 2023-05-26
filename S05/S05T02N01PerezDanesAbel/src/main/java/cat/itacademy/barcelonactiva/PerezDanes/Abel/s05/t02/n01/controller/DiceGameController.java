@@ -61,6 +61,7 @@ public class DiceGameController {
             return "views/addPlayer";
         }
 
+        player.setDate();
         playerService.createPlayer(player);
         System.out.println("player saved: " + player.toString());
         attributes.addFlashAttribute("success", "Player saved.");
@@ -187,7 +188,7 @@ public class DiceGameController {
         model.addAttribute("title", "Player statistics");
         model.addAttribute("player", player);
         model.addAttribute("rollings", rollings);
-        return "views/playerStatistics";
+        return "views/statistics";
     }
 
 
@@ -197,7 +198,7 @@ public class DiceGameController {
         public String result = "";
 
         public void setResult() {
-            result = dice1 + dice1 == 7 ? "Victory" : "Loss";
+            result = dice1 + dice2 == 7 ? "Victory" : "Loss";
         }
     }
 }
