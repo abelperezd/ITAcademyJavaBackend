@@ -24,7 +24,7 @@ public class RollingService implements IRollingService {
     @Override
     public void createRolling(RollingDTO dto) {
         try {
-            rollingRepository.save(new Rolling(dto.getId(), dto.getPlayer_id(), dto.getNumber()));
+            rollingRepository.save(new Rolling(dto.getId(), dto.getPlayer(), dto.getNumber()));
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -34,7 +34,7 @@ public class RollingService implements IRollingService {
     @Transactional
     public void deleteRollingsByPlayerId(int user_id) {
         try {
-            rollingRepository.deleteRollingsById(user_id);
+            rollingRepository.deleteRollingsByPlayerId(user_id);
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -42,7 +42,7 @@ public class RollingService implements IRollingService {
 
     @Override
     public List<RollingDTO> getRollingsByUserId(int user_id) {
-        List<Rolling> rollings = rollingRepository.getRollingsByUserId(user_id);
+        List<Rolling> rollings = rollingRepository.getRollingsByPlayerId(user_id);
         List<RollingDTO> dtos = new ArrayList<>();
         if (!rollings.isEmpty()) {
             rollings.forEach(r -> {
@@ -57,7 +57,7 @@ public class RollingService implements IRollingService {
     @Override
     @Transactional
     public float getAverageUserScoreByUserId(int user_id) {
-        List<Rolling> rollings = rollingRepository.getRollingsByUserId(user_id);
+        List<Rolling> rollings = rollingRepository.getRollingsByPlayerId(user_id);
         int counter = 0;
         if (!rollings.isEmpty()) {
             for (Rolling r : rollings) {
@@ -88,11 +88,11 @@ public class RollingService implements IRollingService {
     //region Mappers
 
     private RollingDTO RollingToDTO(Rolling rolling) {
-        return new RollingDTO(rolling.getId(), rolling.getPlayer_id(), rolling.getNumber());
+        return new RollingDTO(rolling.getId(), rolling.getPlayer(), rolling.getNumber());
     }
 
     private Rolling DTOToRolling(RollingDTO dto) {
-        return new Rolling(dto.getId(), dto.getPlayer_id(), dto.getNumber());
+        return new Rolling(dto.getId(), dto.getPlayer(), dto.getNumber());
     }
 
     //endregion

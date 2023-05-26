@@ -1,11 +1,13 @@
 package cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t02.n01.dto;
 
+import cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t02.n01.model.Player;
+
 public class RollingDTO {
 
     //region Attributes
 
     private int id;
-    private int player_id;
+    private Player player;
     private int number;
     private String result;
 
@@ -16,16 +18,16 @@ public class RollingDTO {
 
     }
 
-    public RollingDTO(int player_id, int number) {
-        this.player_id = player_id;
-        this.player_id = number;
+    public RollingDTO(Player player, int number) {
+        this.player = player;
+        this.number = number;
         setResult(number);
     }
 
-    public RollingDTO(int id, int player_id, int number) {
+    public RollingDTO(int id, Player player, int number) {
         this.id = id;
-        this.player_id = player_id;
-        this.player_id = number;
+        this.player = player;
+        this.number = number;
         setResult(number);
     }
 
@@ -37,8 +39,8 @@ public class RollingDTO {
         return id;
     }
 
-    public int getPlayer_id() {
-        return player_id;
+    public Player getPlayer() {
+        return player;
     }
 
     public int getNumber() {
@@ -54,8 +56,8 @@ public class RollingDTO {
         this.id = id;
     }
 
-    public void setPlayer_id(int player_id) {
-        this.player_id = player_id;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
     public void setNumber(int number) {
@@ -71,7 +73,7 @@ public class RollingDTO {
 
     @Override
     public String toString() {
-        return "Sucursal [id=" + id + ", nom=" + player_id + ", pais=" + player_id + ", tipusSucursal: " + number + "]";
+        return "Sucursal [id=" + id + ", nom=" + player + ", pais=" + player + ", tipusSucursal: " + number + "]";
     }
 
 }

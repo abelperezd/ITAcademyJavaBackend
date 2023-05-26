@@ -71,7 +71,7 @@ public class PlayerDTO {
 
     @Override
     public String toString() {
-        return "Sucursal [id=" + id + ", nom=" + name + ", pais=" + name + ", tipusSucursal: " + date + "]";
+        return "Player [id=" + id + ", name=" + name + ", date=" + date + ", averageScore: " + averageScore + "]";
     }
 
 }

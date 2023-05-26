@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Add player</title>
@@ -10,10 +10,10 @@
     <div class="card bg-light">
         <div class="card-header bg-dark text-white" th:text="${title}"></div>
         <div class="card-body">
-            <form th:action="@{/diceGame/save}" method="post" th:object="${player}">
+            <form th:action="@{/diceGame/savePlayer}" method="post" th:object="${player}">
                 <div class="mb-3 row">
                     <input type="hidden" th:field="*{id}">
-                    <label class="form-label col-md-2" for="name">Nom:</label>
+                    <label class="form-label col-md-2" for="name">Name:</label>
                     <input type="text" th:field="*{name}" class="form-control form-control-sm" id="name"
                            placeholder="Insert player name.">
                     <small class="form-text text-danger" th:if="${#fields.hasErrors('name')}"

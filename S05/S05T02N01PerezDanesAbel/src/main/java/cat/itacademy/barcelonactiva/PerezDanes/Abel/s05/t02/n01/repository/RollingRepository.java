@@ -13,12 +13,11 @@ import java.util.List;
 public interface RollingRepository extends JpaRepository<Rolling, Integer> {
 
     @Modifying
-    @Query("DELETE FROM rolling r WHERE r.user_id=:id")
-    void deleteRollingsById(@Param("id") int id);
+    @Query("DELETE FROM Rolling r WHERE r.player.id = :id")
+    void deleteRollingsByPlayerId(@Param("id") int id);
 
-    @Modifying
-    @Query("SELECT * FROM rolling r WHERE r.user_id=:id")
-    List<Rolling> getRollingsByUserId(@Param("id") int id);
+    @Query("SELECT r FROM Rolling r WHERE r.player.id = :id")
+    List<Rolling> getRollingsByPlayerId(@Param("id") int id);
 
     List<Rolling> findAll();
 

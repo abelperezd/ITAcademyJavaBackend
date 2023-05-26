@@ -1,6 +1,7 @@
 package cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t02.n01.services;
 
 import cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t02.n01.dto.PlayerDTO;
+import cat.itacademy.barcelonactiva.PerezDanes.Abel.s05.t02.n01.model.Player;
 
 import java.util.List;
 
@@ -19,5 +20,9 @@ public interface IPlayerService {
     PlayerDTO getWorsePlayer(List<PlayerDTO> players);
 
     PlayerDTO getBestPlayer(List<PlayerDTO> players);
+
+    PlayerDTO PlayerToDTO(Player player);
+
+    Player DTOToPlayer(PlayerDTO dto);
 
 }

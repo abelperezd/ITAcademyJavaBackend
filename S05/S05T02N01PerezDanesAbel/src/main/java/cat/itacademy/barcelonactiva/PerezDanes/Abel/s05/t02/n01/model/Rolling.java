@@ -20,9 +20,9 @@ public class Rolling {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    //@Column(name = "player_id")
     @ManyToOne @JoinColumn(name = "player_id" )
-    @Column(name = "player_id")
-    private int player_id;
+    private Player player;
 
     @Column(name = "number")
     private int number;
@@ -35,14 +35,14 @@ public class Rolling {
 
     }
 
-    public Rolling(int player_id, int number) {
-        this.player_id = player_id;
+    public Rolling(Player player, int number) {
+        this.player = player;
         this.number = number;
     }
 
-    public Rolling(int id, int player_id, int number) {
+    public Rolling(int id, Player player, int number) {
         this.id = id;
-        this.player_id = player_id;
+        this.player = player;
         this.number = number;
     }
 
@@ -54,8 +54,8 @@ public class Rolling {
         return id;
     }
 
-    public int getPlayer_id() {
-        return player_id;
+    public Player getPlayer() {
+        return player;
     }
 
     public int getNumber() {
@@ -66,8 +66,8 @@ public class Rolling {
         this.id = id;
     }
 
-    public void setPlayer_id(int player_id) {
-        this.player_id = player_id;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
     public void setNumber(int number) {
@@ -78,7 +78,7 @@ public class Rolling {
 
     @Override
     public String toString() {
-        return "Rolling [id=" + id + ", user_id=" + player_id + ", number=" + number + "]";
+        return "Rolling [id=" + id + ", user_id=" + player + ", number=" + number + "]";
     }
 
 }

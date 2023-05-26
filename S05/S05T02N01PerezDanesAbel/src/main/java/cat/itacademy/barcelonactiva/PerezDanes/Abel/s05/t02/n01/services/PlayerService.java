@@ -55,15 +55,19 @@ public class PlayerService implements IPlayerService {
     @Override
     public List<PlayerDTO> getAllPlayers() {
         try {
-            List<PlayerDTO> players = new ArrayList<>();
-            playerRepository.findAll().forEach(p -> {
-                players.add(PlayerToDTO(p));
+            List<PlayerDTO> playerDtos = new ArrayList<>();
+            List<Player>  players = playerRepository.findAll();
+            if(players == null)
+                return null;
+
+            players.forEach(p -> {
+                playerDtos.add(PlayerToDTO(p));
             });
 
-            if (players.isEmpty()) {
+            if (playerDtos.isEmpty()) {
                 return null;
             }
-            return players;
+            return playerDtos;
         } catch (Exception e) {
             System.out.println(e);
             return null;
@@ -71,11 +75,16 @@ public class PlayerService implements IPlayerService {
     }
     @Override
     public PlayerDTO getOnePlayerByName(String name) {
-        return PlayerToDTO(playerRepository.findByName(name));
+        Player player = playerRepository.findByName(name);
+        if(player == null)
+            return null;
+        return PlayerToDTO(player);
     }
 
     @Override
     public PlayerDTO getWorsePlayer(List<PlayerDTO> players){
+        if(players == null)
+            return null;
         return players.stream()
                 .min((p1, p2) -> Float.compare(p1.getAverageScore(), p2.getAverageScore()))
                 .orElse(null);
@@ -83,6 +92,9 @@ public class PlayerService implements IPlayerService {
 
     @Override
     public PlayerDTO getBestPlayer(List<PlayerDTO> players){
+        if(players == null)
+            return null;
+
         return players.stream()
                 .max((p1, p2) -> Float.compare(p1.getAverageScore(), p2.getAverageScore()))
                 .orElse(null);
@@ -90,11 +102,11 @@ public class PlayerService implements IPlayerService {
 
     //region Mappers
 
-    private PlayerDTO PlayerToDTO(Player player) {
+    public PlayerDTO PlayerToDTO(Player player) {
         return new PlayerDTO(player.getId(), player.getName(), player.getDate());
     }
 
-    private Player DTOToPlayer(PlayerDTO dto) {
+    public Player DTOToPlayer(PlayerDTO dto) {
         return new Player(dto.getId(), dto.getName(), dto.getDate());
     }
 

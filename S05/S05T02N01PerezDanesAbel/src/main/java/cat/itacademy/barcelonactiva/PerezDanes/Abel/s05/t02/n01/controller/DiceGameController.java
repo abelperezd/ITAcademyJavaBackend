@@ -87,7 +87,7 @@ public class DiceGameController {
     }
 
     //http://localhost:8080/sucursal/delete/{id} => delete
-    @GetMapping("/delete/{id}")
+    @GetMapping("/deletePlayer/{id}")
     public String deletePlayer(@PathVariable("id") int id, RedirectAttributes attributes) {
 
         if (playerService.getOnePlayerById(id) == null) {
@@ -110,10 +110,11 @@ public class DiceGameController {
     }
 
     //http://localhost:8080/sucursal/getAll => get
-    @GetMapping(value = {"", "/home", "/getAll"})
+    @GetMapping(value = {"/", "", "/home", "/getAll"})
     public String getAllPlayers(Model model) {
         List<PlayerDTO> players = playerService.getAllPlayers();
-        players.forEach(p -> p.setAverageScore(rollingService.getAverageUserScoreByUserId(p.getId())));
+        if (players != null)
+            players.forEach(p -> p.setAverageScore(rollingService.getAverageUserScoreByUserId(p.getId())));
 
         model.addAttribute("title", "Players");
         model.addAttribute("players", players);
@@ -124,13 +125,16 @@ public class DiceGameController {
         return "views/home";
     }
 
-    @GetMapping(value = {"/play"})
-    public String play(PlayerDTO player, DiceResult result, Model model, RedirectAttributes attributes) {
+    @GetMapping(value = {"/play/{id}"})
+    public String play(@PathVariable("id") int id, PlayerDTO player, DiceResult result, Model model, RedirectAttributes attributes) {
 
         if (player == null) {
-            System.out.println("Invalid player");
-            attributes.addFlashAttribute("error", "Player not valid.");
-            return "redirect:/diceGame/home";
+            player = playerService.getOnePlayerById(id);
+            if (player == null) {
+                System.out.println("Invalid player");
+                attributes.addFlashAttribute("error", "Player not valid.");
+                return "redirect:/diceGame/home";
+            }
         }
 
         player.setAverageScore(rollingService.getAverageUserScoreByUserId(player.getId()));
@@ -157,7 +161,7 @@ public class DiceGameController {
         result.dice1 = (int) Math.floor(Math.random() * (6 - 1 + 1) + 1);
         result.dice2 = (int) Math.floor(Math.random() * (6 - 1 + 1) + 1);
         result.setResult();
-        rollingService.createRolling(new RollingDTO(player.getId(), result.dice1 + result.dice2));
+        rollingService.createRolling(new RollingDTO(playerService.DTOToPlayer(player), result.dice1 + result.dice2));
 
 
         model.addAttribute("title", "Play");
@@ -167,7 +171,7 @@ public class DiceGameController {
         return "views/play";
     }
 
-    @GetMapping(value = {"/getPlayerStatistics"})
+    @GetMapping(value = {"/getPlayerStatistics/{id}"})
     public String getPlayerStatistics(@PathVariable("id") int id, Model model, RedirectAttributes attributes) {
         PlayerDTO player = playerService.getOnePlayerById(id);
         if (player == null) {
