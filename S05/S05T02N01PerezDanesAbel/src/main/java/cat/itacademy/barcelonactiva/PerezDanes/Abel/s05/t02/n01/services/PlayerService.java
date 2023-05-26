@@ -84,7 +84,7 @@ public class PlayerService implements IPlayerService {
     @Override
     public PlayerDTO getWorsePlayer(List<PlayerDTO> players){
         if(players == null)
-            return null;
+            return new PlayerDTO();
         return players.stream()
                 .min((p1, p2) -> Float.compare(p1.getAverageScore(), p2.getAverageScore()))
                 .orElse(null);
@@ -93,7 +93,7 @@ public class PlayerService implements IPlayerService {
     @Override
     public PlayerDTO getBestPlayer(List<PlayerDTO> players){
         if(players == null)
-            return null;
+            return new PlayerDTO();
 
         return players.stream()
                 .max((p1, p2) -> Float.compare(p1.getAverageScore(), p2.getAverageScore()))

@@ -63,7 +63,7 @@ public class RollingService implements IRollingService {
             for (Rolling r : rollings) {
                 counter += r.getNumber() == 7 ? 1 : 0;
             }
-            return counter / rollings.size() * 100;
+            return (float) counter / rollings.size() * 100;
         } else {
             return 0;
         }
@@ -77,7 +77,7 @@ public class RollingService implements IRollingService {
             for (Rolling r : rollings) {
                 counter += r.getNumber() == 7 ? 1 : 0;
             }
-            return counter / rollings.size() * 100;
+            return (float) counter / rollings.size() * 100;
         } else {
             return 0;
         }

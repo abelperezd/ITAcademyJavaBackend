@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
+<head th:replace="templates/template :: head">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>DICE GAME</title>
 </head>
 <body>
 <header th:replace="templates/template :: header"></header>
 <div class="container">
-    <h1 th:text="${title}"></h1>
+    <h1 th:text="${title}" class="text-center"></h1>
 </div>
 <div class="container">
-    <a class="btn btn-primary btn-small" th:href="@{/diceGame/addPlayer}" title="New player">New user</a>
+
+    <div style="height: 20px;"></div>
+
+    <h4 class="text-center">Players</h4>
+
+    <a class="btn btn-primary btn-small" th:href="@{/diceGame/addPlayer}" title="New player">New Player</a>
 
     <table class="table">
         <thead>
@@ -18,7 +23,7 @@
             <th scope="col">ID</th>
             <th scope="col">Name</th>
             <th scope="col">Cr. Date</th>
-            <th scope="col">Avg. Score</th>
+            <th scope="col">Avg. Score (%)</th>
             <th scope="col">Edit/Delete</th>
             <th scope="col">Play/Statistics</th>
         </tr>
@@ -30,21 +35,65 @@
             <td th:text="${play.date}"></td>
             <td th:text="${play.averageScore}"></td>
             <td>
-                <a class="btn btn-success btn-small" th:href="@{/diceGame/updatePlayer/} + ${play.id}"
+                <a class="btn btn-warning btn-small" th:href="@{/diceGame/updatePlayer/} + ${play.id}"
                    title="Edit">Edit</a>
                 <a class="btn btn-danger btn-small" th:href="@{/diceGame/deletePlayer/} + ${play.id}" title="Delete"
                    onclick="return confirm('Confirmar eliminació?')">Delete</a>
             </td>
             <td>
                 <a class="btn btn-success btn-small" th:href="@{/diceGame/play/} + ${play.id}" title="Play">Play</a>
-                <a class="btn btn-success btn-small" th:href="@{/diceGame/getPlayerStatistics/} + ${play.id}"
+                <a class="btn btn-secondary btn-small" th:href="@{/diceGame/getPlayerStatistics/} + ${play.id}"
                    title="Statistics">Statistics</a>
             </td>
         </tr>
 
         </tbody>
     </table>
+
+    <div style="height: 20px;"></div>
+
+    <h4 class="text-center">Statistics</h4>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Cr. Date</th>
+            <th scope="col">Avg. Score (%)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">Best</th>
+            <td th:text="${best.id}"></td>
+            <td th:text="${best.name}"></td>
+            <td th:text="${best.date}"></td>
+            <td th:text="${best.averageScore}"></td>
+
+        </tr>
+        <tr>
+            <th scope="row">Worst</th>
+            <td th:text="${worst.id}"></td>
+            <td th:text="${worst.name}"></td>
+            <td th:text="${worst.date}"></td>
+            <td th:text="${worst.averageScore}"></td>
+        </tr>
+        <tr>
+            <th scope="row">Players average</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td th:text="${avg}"></td>
+        </tr>
+
+        </tbody>
+    </table>
 </div>
+
+
+
 <footer th:replace="templates/template :: footer"></footer>
 </body>
 </html>
