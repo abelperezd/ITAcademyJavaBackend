@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="templates/template :: head">
+    <meta charset="UTF-8">
+    <title>Dice Game</title>
+</head>
+<body>
+<header th:replace="templates/template :: header"></header>
+<div class="container">
+    <h1 th:text="${title}" class="text-center"></h1>
+</div>
+<div class="container">
+
+    <div style="height: 20px;"></div>
+
+    <h4 class="text-center">Player statistics</h4>
+
+    <div style="height: 20px;"></div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Cr. Date</th>
+            <th scope="col">Avg. Score (%)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${player.id}"></td>
+            <td th:text="${player.name}"></td>
+            <td th:text="${player.date}"></td>
+            <td th:text="${player.averageScore}"></td>
+
+        </tr>
+        </tbody>
+    </table>
+
+
+    <div style="height: 20px;"></div>
+
+    <h4 class="text-center">Statistics</h4>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Number</th>
+            <th scope="col">Result</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="rol : ${rollings}">
+            <td th:text="${rol.number}"></td>
+            <td th:text="${rol.result}"></td>
+        </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+
+<footer th:replace="templates/template :: footer"></footer>
+</body>
+</html>
